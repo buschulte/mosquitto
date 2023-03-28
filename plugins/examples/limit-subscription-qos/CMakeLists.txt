@@ -18,9 +18,8 @@ set_target_properties(${PLUGIN_NAME} PROPERTIES
 	PREFIX ""
 	POSITION_INDEPENDENT_CODE 1
 )
-if(WIN32)
-	target_link_libraries(${PLUGIN_NAME} mosquitto)
-endif()
+
+target_link_libraries(${PLUGIN_NAME} mosquitto)
 
 # Don't install, these are example plugins only.
 #install(TARGETS ${PLUGIN_NAME} RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}" LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}")

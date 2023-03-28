@@ -2,6 +2,9 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#ifdef __APPLE__
+#include <sys/select.h>
+#endif
 
 #include <mosquittopp.h>
 

@@ -28,6 +28,18 @@ target_include_directories(mosquitto_db_dump PRIVATE
 	"${mosquitto_SOURCE_DIR}/src"
 )
 
+if(WITH_TLS)
+	target_include_directories(mosquitto_db_dump PRIVATE
+		${OPENSSL_INCLUDE_DIR}
+	)
+endif()
+
+if(WITH_BUNDLED_DEPS)
+	target_include_directories(mosquitto_db_dump PRIVATE
+		"${mosquitto_SOURCE_DIR}/deps"
+	)
+endif()
+
 install(TARGETS mosquitto_db_dump
 	RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
 )
